@@ -11,6 +11,7 @@ Background:
     When method post
     Then status 400
     And match response.mensaje == 'cantidad obligatoria'
+    * mock.stop()
     
  Scenario: POST con  cantidad cero
     Given path 'pedidos'
@@ -19,6 +20,7 @@ Background:
     Then status 201
     And match response.id == '88'
     And match response.estado == 'creado'
+    * mock.stop()
 
 # Para que fuera válido introducir cantidad = 0
 # tendríamos que modificar el mock para aceptar cantidad = 0 como válido.

@@ -11,6 +11,7 @@ Scenario:
     Then status 200
     And match response.id == '77'
     And match response.estado == 'enviado'
+    * mock.stop()
 
 Scenario:
     Given path 'pedidos'
@@ -18,5 +19,6 @@ Scenario:
     Then status 201
     And match response.id == '88'
     And match response.estado == 'creado'
+    * mock.stop()
 
     
